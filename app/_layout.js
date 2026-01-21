@@ -1,14 +1,36 @@
-// app/_layout.js
-import { Stack } from "expo-router";
+import { Stack } from 'expo-router';
 
-export default function RootLayout() {
+export default function Layout() {
   return (
-    <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="index" />     {/* Splash */}
-      <Stack.Screen name="signup" />    {/* Sign Up */}
-      <Stack.Screen name="login" />     {/* Login */}
-      <Stack.Screen name="taskList" />  {/* Task List */}
-      <Stack.Screen name="add-task" />  {/* Add Task */}
+    <Stack>
+      <Stack.Screen 
+        name="index" 
+        options={{ 
+          headerShown: false,
+          title: 'Task List'
+        }} 
+      />
+      <Stack.Screen 
+        name="add-task" 
+        options={{ 
+          presentation: 'modal',
+          title: 'Add New Task'
+        }} 
+      />
+      <Stack.Screen 
+        name="edit-task" 
+        options={{ 
+          presentation: 'modal',
+          title: 'Edit Task'
+        }} 
+      />
+      <Stack.Screen 
+        name="login" 
+        options={{ 
+          headerShown: false,
+          title: 'Login'
+        }} 
+      />
     </Stack>
   );
 }
